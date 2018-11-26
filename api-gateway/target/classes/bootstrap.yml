@@ -1,0 +1,20 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: api-gateway
+eureka:
+  instance:
+    hostname: gateway
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+  #下面的配置不是必须，如果不配置，将默认使用http://localhost:8091/项目名/方法
+zuul: #需要忽视的服务
+  routes:   #要加入路由的服务
+    user:                #可以随便写，再zuul上面唯一即可，当这里的值 = service-id时， service-id可以不写
+    path: /**   #想要映射到的路径
+    service-id: ribbon    #eureka 中的服务id
+    #url: http://localhost:8082  zuul 可以不使用eureka 需在这里指明地址
+  ignored-services: web
+
