@@ -14,10 +14,12 @@ public class ConfigClientController {
 
     @Value("${hankai.gender}")
     private String profile;
+    @Value("${eureka.client.service-url.defaultZone}")
+    private String aa;
 
     @GetMapping("/hello")
     public String hello(){
-        return this.profile;
+        return this.profile + aa;
     }
 
 }
