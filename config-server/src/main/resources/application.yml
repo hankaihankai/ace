@@ -1,0 +1,31 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: config-server
+  #  profiles:
+  #    active: dev #设置为本地启动方式，不是通过git
+  cloud:
+    config:
+      server:
+
+        default-label: config
+        git:
+          uri: https://github.com/hankaihankai/ace.git
+          username: hankai
+          password: hankai1994
+  #        native:
+  #          #本地
+  #          search-locations: classpath:/config-reop
+
+  #        svn:
+  #          #仓库的地址
+  #          uri:
+  #          #仓库相对地址 可以多个 ，隔开
+  #          search-paths: config-repo
+  #          username: hankai
+  #          password:
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/

@@ -1,0 +1,19 @@
+#server:
+#  port: 8085
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8000/eureka/
+#  instance:
+#    prefer-ip-address: false
+spring:
+  application:
+    name: core
+  rabbitmq:
+    host: 192.168.43.224
+    port: 5672
+    username: guest
+    password: guest
+#ribbon:
+#  eureka:
+#    enabled: true #默认为true 如果是false 不从eureka列表获取服务
