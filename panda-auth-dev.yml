@@ -1,3 +1,6 @@
-
-hh:
-  aa: 123
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/Transfer
+    username: root
+    password: 123456
